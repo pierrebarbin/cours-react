@@ -4,10 +4,13 @@ import PropTypes from 'prop-types';
 class Contact extends Component {
 
     isOnline(){
-        if(this.props.person.online){
-            return <p>Online<span className="status-online"></span></p>;
-        }
-        return <p>Offline<span className="status-offline"></span></p>;
+        const isOnline = this.props.person.online;
+        return (
+            <p>
+                { isOnline ? 'Online' : 'Offline' }
+                <span className={ isOnline ? 'status-online' : 'status-offline'}></span>
+            </p>
+        );
     }
 
     render() {
