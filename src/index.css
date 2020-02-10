@@ -16,7 +16,7 @@ code {
 .Contact {
   padding: 1em;
   background: #555;
-  width: 220px;
+  width: 300px;
   display: flex;
   align-items: center;
 }
@@ -57,4 +57,13 @@ code {
 
 .Contact .status .status-offline {
   background: #f4511e;
+}
+
+.btn {
+  background: #548;
+  border: 1px solid #548;
+  border-radius: 4px;
+  color: #fff;
+  padding: 0.25rem 1rem;
+  font-size: 1rem;
 }

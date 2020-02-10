@@ -13,15 +13,21 @@ class Contact extends Component {
         );
     }
 
+    eventListener(event) {
+        const {id, type, className, text} = event.target;
+        console.log(`Button "${id}" of type "${type}" and class "${className}" contains "${text}"`);
+    };
+
     render() {
-        let {name, avatar} = this.props.person;
+        let {id, name, avatar} = this.props.person;
         return (
             <div className="Contact">
-                <img className="avatar" src={avatar} alt={avatar}/>
+                <img className="avatar" src={ avatar } alt={ avatar }/>
                 <h4 className="name">{ name }</h4>
                 <div className="status">
                     <div className="status-text">{ this.isOnline() }</div>
                 </div>
+                <button id={id} type="button" className="btn" onClick={ this.eventListener }>Click me</button>
             </div>
         );
     }
