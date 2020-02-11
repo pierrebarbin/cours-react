@@ -12,11 +12,7 @@ class SimpsonsForm extends Component {
         this.getQuote = this.getQuote.bind(this);
 
         this.state = {
-            quote: {
-                quote: "",
-                character: "",
-                image: ""
-            }
+            quote: null
         }
     }
 
@@ -24,8 +20,12 @@ class SimpsonsForm extends Component {
         axios.get(`https://simpsons-quotes-api.herokuapp.com/quotes`)
             .then(res => {
                 const quote = res.data[0];
-                this.setState({ quote: quote});
+                this.setState({quote: quote});
             })
+    }
+
+    componentDidMount(){
+        this.getQuote();
     }
 
     render() {
