@@ -39,11 +39,22 @@ class ContactList extends Component {
         ]
     };
 
+    toggleStatus = (id) => {
+        this.setState({
+            persons: [...this.state.persons.map((person) => {
+                if(person.id === id){
+                    person.online = !person.online;
+                }
+                return person;
+            })]
+        });
+    };
+
     render() {
         return (
             <div>
                 {this.state.persons.map((person) => {
-                    return <Contact key={person.id} person={person} />
+                    return <Contact key={person.id} person={person} toggleStatus={this.toggleStatus}/>
                 })}
             </div>
         );

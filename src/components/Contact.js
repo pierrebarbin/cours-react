@@ -13,11 +13,6 @@ class Contact extends Component {
         );
     }
 
-    eventListener(event) {
-        const {id, type, className, text} = event.target;
-        console.log(`Button "${id}" of type "${type}" and class "${className}" contains "${text}"`);
-    };
-
     render() {
         let {id, name, avatar} = this.props.person;
         return (
@@ -25,9 +20,8 @@ class Contact extends Component {
                 <img className="avatar" src={ avatar } alt={ avatar }/>
                 <h4 className="name">{ name }</h4>
                 <div className="status">
-                    <div className="status-text">{ this.isOnline() }</div>
+                    <div className="status-text" onClick={ this.props.toggleStatus.bind(this,id) }>{ this.isOnline() }</div>
                 </div>
-                <button id={id} type="button" className="btn" onClick={ this.eventListener }>Click me</button>
             </div>
         );
     }
