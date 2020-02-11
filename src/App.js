@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ContactList from "./components/ContactList";
+import Form from "./components/Form/Form";
 
 
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
         return (
             <div className="App">
                 <ContactList />
+                <Form />
             </div>
         );
     }
