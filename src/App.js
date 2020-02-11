@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import SimpsonsForm from "./components/Simpsons/SimpsonsForm";
+import SimsonsList from "./components/Simpsons/SimsonsList";
 
 
 class App extends Component {
@@ -8,6 +9,7 @@ class App extends Component {
         return (
             <div className="App">
                 <SimpsonsForm />
+                <SimsonsList />
             </div>
         );
     }
